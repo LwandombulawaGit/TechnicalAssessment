@@ -1,0 +1,30 @@
+﻿@page
+@model TechnicalAssessment.Pages.LogsModel
+
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Technical Assessment</h1>
+    <label for="html">Match Logs</label>
+    <div class="jumbotron justify-content-center border-danger">
+        @if (Model.listLogs.Count < 1)
+        {
+            <div class="alert alert-warning" role="alert">
+                There aren't any logs to display.
+            </div>
+        }
+        else
+        {
+            <table style="width:100%;">
+                @foreach (string log in Model.listLogs)
+                {
+                    <tr>
+                        <td>@log</td>
+                    </tr>
+                }
+            </table>
+
+        }
+    </div>
+</div>

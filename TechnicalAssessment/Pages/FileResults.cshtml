@@ -1,0 +1,21 @@
+﻿@page
+@model TechnicalAssessment.Pages.FileResults
+@{
+}
+<div class="text-center">
+    <div class="jumbotron justify-content-center border-danger">
+        @if (Model.sortedResultDictionary != null)
+        {
+            <label for="html" class="text-black"><b>Results</b></label>
+            <div class="jumbotron border-danger">
+                @foreach (KeyValuePair<int, List<string>> results in Model.sortedResultDictionary)
+                {
+                    foreach (string result in results.Value)
+                    {
+                        <p class="text-black"> @result</p>
+                    }
+                }
+            </div>
+        }
+    </div>
+</div>
