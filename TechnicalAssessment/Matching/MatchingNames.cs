@@ -281,23 +281,7 @@ namespace TechnicalAssessment.Matching
             return listOsLogs;
 
         }
-        /*public static List<string> getOutPutResults()
-        {
-
-            List<string> listoutputResults = new List<string>();
-            FileStream fileStream = new FileStream("output.txt", FileMode.Open, FileAccess.Read);
-            using (StreamReader streamReader = new StreamReader(fileStream, Encoding.UTF8))
-            {
-                string line;
-                while ((line = streamReader.ReadLine()) != null)
-                {
-                    listoutputResults.Add(line);
-                }
-            }
-            return listoutputResults;
-
-        }
-        */
+        //Clearing output file
         private static void ClearOutputFile()
         {
             if (!File.Exists("Output.txt"))
