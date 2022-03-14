@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-white">Matching</h1>
+    <label for="html" class="text-white">Enter Player Names</label>
+    @if (Model.isError == true)
+    {
+        <div class="alert alert-danger" role="alert">
+            Please Make Sure You Enter Valid Names( eg. Contains only aphabets or check <a asp-page="/Logs">Logs</a>)
+        </div>
+    }
+    
+    <form method="post"  >
+        <div class="container1" >
+            <div class="mb-3 mt-3">
+                <label for="email" style="color:black" class="form-label">Player 1 FirstName:</label>
+                <input asp-for="Player1" style="color:black" id="player1" type="text" />
+            </div>
+            <div class="mb-3">
+                <label for="pwd" style="color:black" class="form-label">Player 2 FirstName:</label>
+                <input asp-for="Player2" style="color:black" id="player2" type="text" /><br /><br />
+            </div>
+        </div>
+        <input id="Submit1" type="submit" value="Show Result"  style="color:black" class="btn btn-primary" />
+        <br /><br />
+        @if (Model.singleMatchResult != null)
+        {
+
+            <p style="background-color:mediumseagreen"  class="text-black"> @Model.singleMatchResult</p>
+        }
+    </form>
+</div>
+<style>
+    .container1{
+        border:2px solid green;
+    }
+</style>
+
